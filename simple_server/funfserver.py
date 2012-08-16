@@ -118,13 +118,14 @@ if __name__ == '__main__':
     if sys.argv[1:]:
         port = int(sys.argv[1])
     else:
-        port = 8000
-    server_address = ('', port)
+        port = 88
+    server_address = ('128.97.93.155', port)
     httpd = ThreadedHTTPServer(server_address, RequestHandler)
 
     sa = httpd.socket.getsockname()
     print "Serving HTTP on", sa[0], "port", sa[1], "..."
     print 'use <Ctrl-C> to stop'
     httpd.serve_forever()
+
 
 
