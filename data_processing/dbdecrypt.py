@@ -67,7 +67,7 @@ if __name__ == '__main__':
     parser.add_option("-k", "--key", dest="key", default=None,
                       help="The DES key used to decrypt the files.  Uses the default hard coded one if one is not supplied.",)
     (options, args) = parser.parse_args()
-    key = options.key if options.key else decrypt.key_from_password(decrypt.prompt_for_password())
+    key = decrypt.key_from_password(options.key) if options.key else decrypt.key_from_password(decrypt.prompt_for_password())
     
     try:
         for file_name in args:
